@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ems-backend
+    runtime: java
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/employee-management-0.0.1-SNAPSHOT.jar"
+    envVars:
+      - key: DATABASE_URL
+        value: jdbc:postgresql://ep-autumn-mud-apkvvqnm.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require
+      - key: DB_USERNAME
+        value: neondb_owner
+      - key: DB_PASSWORD
+        value: npg_CoGAfkeVB93M
+      - key: JWT_SECRET
+        value: shabnam_super_secret_key_123456789012345
